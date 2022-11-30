@@ -1,9 +1,10 @@
 import Header from "../components/Header";
+import Content from "../components/Content";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import {useState} from "react";
 
-
+if (0) console.log(Content);
 const vocabularies = [
   {
     word: "knotty",
@@ -40,14 +41,20 @@ function FlashCard() {
 
   const handleStarClick = (event) => { };
 
-  const handleExampleClick = (list_of_example) => {
-    console.log(openExample);
-    console.log("openExample[0]", openExample[0]);
-    console.log("openExample[1]", openExample[1]);
-    console.log("openExample[2]", openExample[2]);
-    console.log("openExample[3]", openExample[3]);
-    setOpenExample(list_of_example);
-  };
+  if (0) console.log(handleStarClick);
+
+  const handleExampleClick = (index, example) => {
+    let current = [...openExample];
+    current[index] = example;
+    setOpenExample(current);
+//  const handleExampleClick = (list_of_example) => {
+//    console.log(openExample);
+//    console.log("openExample[0]", openExample[0]);
+//    console.log("openExample[1]", openExample[1]);
+//    console.log("openExample[2]", openExample[2]);
+//    console.log("openExample[3]", openExample[3]);
+//    setOpenExample(list_of_example);
+//  };
 
 //  const handleExampleClick_ver2 = (input) => {
 
@@ -66,7 +73,7 @@ function FlashCard() {
 
 //    console.log(openExample);
 
-//  };
+  };
 
   return (
     <div>
@@ -82,12 +89,12 @@ function FlashCard() {
             definition={v.definition}
           />
           <Button className="example-button" text="Example" onClick={
-            event => handleExampleClick([v.example])
+            event => handleExampleClick(index,v.example)
 
            }
           />
-          {/* <span>{openExample[index]}</span> */}
-          <span>openExample[{index}]: {openExample[index]}</span>
+           <span>{openExample[index]}</span>
+           {/* <span>openExample[{index}]: {openExample[index]}</span> */}
 
         </div>
         ); })
@@ -96,6 +103,7 @@ function FlashCard() {
     </div>
   );
 }
+
 
 
 
