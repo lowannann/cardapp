@@ -3,18 +3,23 @@ import {  Route , Switch, Link } from 'react-router-dom';
 import FlashCard from './containers/FlashCard.js';
 import About from './containers/About.js';
 import Translator from './containers/Translator.js';
-
+import '/Users/joannechi/nlpWeb/myApp/nlpweb/mycardapp/cardapp/hello-world/src/containers/About.css';
 function Home(){
   return(
-    <div>
+    <div className='container'>
+      <div className="page-header">
+
     <h1>
-      HOME
+      Choose one to go 🥳
     </h1>
     <nav>
       <Link to="/flashcard">FlashCard</Link>
+      <p></p>
       <Link to="/about">About</Link>
+      <p></p>
       <Link to="/translate">Translator</Link>
     </nav> 
+    </div>
     </div>
     );
 }
